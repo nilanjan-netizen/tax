@@ -42,7 +42,7 @@ const Step3 = () => {
   };
 
   const handleBack = () => {
-    navigate('/');
+    navigate('/step2');
   };
 
   const handleNext = () => {

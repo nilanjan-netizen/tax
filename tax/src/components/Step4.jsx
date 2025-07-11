@@ -50,10 +50,11 @@ const Step4 = () => {
   };
 
   const handleSubmit = () => {
-  console.log("Submitted:", form);
-  alert("✅ Thanks to you, form submitted!");
-  setFormSubmitted(true);
-};
+    console.log("Submitted:", form);
+    alert("✅ Thanks to you, form submitted!");
+    setFormSubmitted(true);
+    navigate('/step5');
+  };
 
   return (
     <div className="p-8 max-w-6xl mx-auto space-y-8">
@@ -61,25 +62,25 @@ const Step4 = () => {
 
       <h3 className="text-lg font-semibold text-cyan-800 underline">Other Details</h3>
 
-<p className="mt-2 font-semibold text-gray-800">Engaged with*:</p>
-<div className="flex flex-wrap gap-6 mt-2">
-  {['Profession', 'Trade', 'Calling', 'Employment'].map(option => (
-    <label
-      key={option}
-      className="flex items-center gap-3 px-4 py-2 bg-gray-100 rounded shadow-sm cursor-pointer hover:bg-blue-100 transition-all font-semibold text-lg text-gray-800 border border-gray-300"
-    >
-      <input
-        type="radio"
-        name="engagedWith"
-        value={option}
-        checked={form.engagedWith === option}
-        onChange={(e) => handleEngagedChange(e.target.value)}
-        className="w-5 h-5"
-      />
-      {option}
-    </label>
-  ))}
-</div>
+      <p className="mt-2 font-semibold text-gray-800">Engaged with*:</p>
+      <div className="flex flex-wrap gap-6 mt-2">
+        {['Profession', 'Trade', 'Calling', 'Employment'].map(option => (
+          <label
+            key={option}
+            className="flex items-center gap-3 px-4 py-2 bg-gray-100 rounded shadow-sm cursor-pointer hover:bg-blue-100 transition-all font-semibold text-lg text-gray-800 border border-gray-300"
+          >
+            <input
+              type="radio"
+              name="engagedWith"
+              value={option}
+              checked={form.engagedWith === option}
+              onChange={(e) => handleEngagedChange(e.target.value)}
+              className="w-5 h-5"
+            />
+            {option}
+          </label>
+        ))}
+      </div>
 
       <p className="font-semibold mt-4">Furnish the Details of Profession:</p>
 
@@ -161,15 +162,11 @@ const Step4 = () => {
       </div>
 
       <div className="flex justify-between mt-6">
-  <button onClick={() => navigate('/step3')} className="bg-yellow-500 px-6 py-2 rounded hover:bg-yellow-600">⬅ Back</button>
-  <button onClick={handleSubmit} className="bg-yellow-500 px-6 py-2 rounded hover:bg-yellow-600">Submit ✅</button>
-</div>
-
-
+        <button onClick={() => navigate('/step3')} className="bg-yellow-500 px-6 py-2 rounded hover:bg-yellow-600">⬅ Back</button>
+        <button onClick={handleSubmit} className="bg-yellow-500 px-6 py-2 rounded hover:bg-yellow-600">Submit ✅</button>
+      </div>
     </div>
   );
 };
-
-
 
 export default Step4;
